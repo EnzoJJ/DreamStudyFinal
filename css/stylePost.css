@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../img/fondo.jpg);
+
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container Styles */
+.container {
+    max-width: 80%;
+    width: 100%;
+    padding: 20px 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Animación de la tarjeta */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Heading Styles */
+.container h1 {
+    font-size: 50px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Alert Styles */
+.alert {
+    color: #444;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Pequeña animación de hover */
+.alert:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Text inside Alert */
+.alert p {
+    margin: 8px 0;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Primary Button */
+.btn.primary {
+    background-color: #007bff;
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.08);
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Danger Button */
+.btn.danger {
+    background-color: #dc3545;
+    box-shadow: 0px 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+.btn.danger:hover {
+    background-color: #a71d2a;
+    transform: scale(1.08);
+    box-shadow: 0px 6px 12px rgba(220, 53, 69, 0.4);
+}

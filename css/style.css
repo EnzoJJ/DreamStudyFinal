@@ -1,0 +1,261 @@
+body {
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.contenedor-img {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 200px;
+    animation: slideIn 1.2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.img {
+    max-width: 350px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.img:hover {
+    transform: scale(1.05);
+}
+.contenedor-form {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+form.form-reserva {
+    background-color: #ffff;
+    border-radius: 35px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.438);
+    animation: popUp 1.2s ease-out;
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.contenedor-titulo {
+    text-align: center;
+    margin-top: -150px;
+}
+
+.titulo-form {
+    color: #000000; /* Color del título */
+    font-size: 40px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+}
+
+.form-control, .form-select {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: block;
+
+}
+.form-control:focus, .form-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#btn-reservar {
+    background-color: #007bff;
+    width: 300px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btn-reservar:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.contenedor-redes {
+    position: fixed;
+    left: 10px; /* Pegado al borde izquierdo */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contenedor-redes .red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contenedor-redes .red:hover {
+    transform: scale(1.2);
+    background-color: #ff6b6b;
+}
+
+.contenedor-redes .social-instagram {
+    background: rgb(0, 0, 0);
+}
+
+.contenedor-redes .social-instagram:hover {
+    background: radial-gradient(circle, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.contenedor-redes .social-tiktok {
+    background: #010101;
+}
+
+.contenedor-redes .social-tiktok:hover {
+    background: linear-gradient(45deg, #69c9d0, #ee1d52);
+}
+/*POST TURNO*/
+.card {
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+}
+
+h1 {
+    font-size: 2.5rem; /* Tamaño más grande para el título */
+    font-weight: bold;
+}
+
+.alert-success {
+    font-size: 1.1rem; /* Tamaño de texto más grande */
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+.footer {
+    width: 120vw; /* Asegura que ocupe todo el ancho de la pantalla */
+    margin: 0; /* Elimina cualquier margen no deseado */
+    padding: 1rem 0; /* Espaciado vertical */
+    background-color: #000000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    position: relative; /* Asegura que no se vea afectado por otros elementos */
+    left: 0; /* Alinea al borde izquierdo */
+    right: 0; /* Alinea al borde derecho */
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+@media only screen and (max-width: 450px) {
+    form.form-reserva {
+        width: 70%;
+        max-width: 90%;
+    }
+    .contenedor-form {
+        width: 100vw;
+        margin-left: -20px;
+    }
+    .img {
+        max-width: 250px;
+    }
+    .contenedor-redes {
+        display: none !important;  
+        visibility: hidden; 
+    }
+    .form-label {
+        font-size: 15px;
+    }
+    .form-control, .form-select {
+        padding: 8px;
+        font-size: 10px;
+        margin-bottom: 15px;
+    }
+    #btn-reservar {
+        width: 80%;
+    }
+}
+
