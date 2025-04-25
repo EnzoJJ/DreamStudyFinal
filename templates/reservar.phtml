@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="img\ad9e70e4d5a51fad8bbd7fbed378244a~c5_720x720.jpg" type="image/jpg">
+    <title>Dream Study</title>
+</head>
+<body>
+    <div class="contenedor-form">
+        <form class="form-reserva" method="POST" action="index.php?action=add">
+            <div class="contenedor-img">
+                <img class="img" src="img\ad9e70e4d5a51fad8bbd7fbed378244a~c5_720x720.jpg" alt="Imagen de mármol">
+            </div>
+            <div class="contenedor-titulo">
+                <h1 class="titulo-form"> Turnos</h1>
+            </div>
+            <div>
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su nombre" required>
+            </div>
+            <div>
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Ingrese su apellido" required>
+            </div>
+            <div>
+                <label for="telefono" class="form-label">Teléfono-Celular</label>
+                <input type="tel" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10,15}" placeholder="Ingrese su número de teléfono" required>
+            </div>
+            <div>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su email" required>
+            </div>
+            <div>
+                <label for="servicio" class="form-label">Servicio</label>
+                <select id="servicio" name="servicio" class="form-select" required>
+                    <option value="">Seleccione un servicio</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Corte y barba">Corte y barba</option>
+                    <option value="Corte, barba y cejas">Corte, barba y cejas</option>
+                    <option value="Cejas">Cejas</option>
+                </select>
+            </div>
+            <div>
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="date" id="fecha" name="fecha" class="form-control" required>
+            </div>
+            <div>
+                <label for="horario" class="form-label">Horario</label>
+                <select id="horario" name="horario" class="form-select" required>
+                    <option value="">Seleccione un horario</option>
+                </select>
+            </div>
+            <button type="submit" id="btn-reservar">Reservar</button>
+        </form>
+    </div>
+    <div class="contenedor-redes">
+            <a href="https://www.instagram.com/dreamstudy.00/" target="_blank" class="red social-instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@dream.study01?lang=es" target="_blank" class="red social-tiktok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <footer class="footer">
+        <p>&copy; 2024 Dream Study. Todos los derechos reservados.</p>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+</html>

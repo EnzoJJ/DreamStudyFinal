@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/turnos.css">
+    <link rel="icon" href="img\ad9e70e4d5a51fad8bbd7fbed378244a~c5_720x720.jpg" type="image/jpg">
+    <title>Dream Study - Admin</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="navbar-brand"><img src="img\ad9e70e4d5a51fad8bbd7fbed378244a~c5_720x720.jpg" alt=""></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.php?action=logout"><img><svg fill="white" width="auto" height="30px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>logout-solid</title>
+                            <path d="M23,4H7A2,2,0,0,0,5,6V30a2,2,0,0,0,2,2H23a2,2,0,0,0,2-2V24H15.63a1,1,0,0,1-1-1,1,1,0,0,1,1-1H25V6A2,2,0,0,0,23,4Z" class="clr-i-solid clr-i-solid-path-1"></path><path d="M28.16,17.28a1,1,0,0,0-1.41,1.41L30.13,22H25v2h5.13l-3.38,3.46a1,1,0,1,0,1.41,1.41L34,23.07Z" class="clr-i-solid clr-i-solid-path-2"></path>
+                            <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+                        </svg></img></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <?php if (isset($_SESSION['mensaje'])): ?>
+            <div class="alert success">
+                <?= $_SESSION['mensaje']; ?>
+            </div>
+            <?php unset($_SESSION['mensaje']); ?>
+        <?php endif; ?>
+
+        <section>
+            <h2 class="section-title">Turnos Reservados</h2>
+            
+            <?php if (!empty($turnosAgrupados)): ?>
+            <?php foreach ($turnosAgrupados as $dia => $turnosDelDia): ?>
+                <h3 class="day-title"><?= $dia; ?></h3>
+                <?php if (empty($turnosDelDia)): ?>
+                    <p class="no-turnos">No hay turnos reservados para este día.</p>
+                <?php else: ?>
+                    <table class="turnos-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Servicio</th>
+                                <th>Fecha</th>
+                                <th>Horario</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Verificar si todos los turnos son "Cerrado"
+                            $todosCerrado = array_reduce($turnosDelDia, function ($carry, $turno) {
+                                return $carry && $turno->nombre === 'Cerrado';
+                            }, true);
+                            ?>
+
+                            <?php if ($todosCerrado): ?>
+                                <tr>
+                                    <td colspan="8" class="text-center">Cerrado</td>
+                                </tr>
+                            <?php else: ?>
+                                <?php foreach ($turnosDelDia as $turno): ?>
+                                    <?php if (!$todosCerrado || $turno->nombre !== 'Cerrado'): ?>
+                                        <tr>
+                                            <td><?= $turno->nombre ?></td>
+                                            <td><?= $turno->apellido ?></td>
+                                            <td><?= $turno->email ?></td>
+                                            <td><?= $turno->telefono ?></td>
+                                            <td><?= $turno->servicio ?></td>
+                                            <td><?= $turno->fecha ?></td>
+                                            <td><?= $turno->horario ?></td>
+                                            <td>
+                                                <?php if ($turno->nombre !== 'Cerrado'): ?>
+                                                    <form method="POST" action="index.php?action=delete">
+                                                        <input type="hidden" name="turno_id" value="<?= $turno->id_turno ?>">
+                                                        <button type="submit" class="btn danger">Borrar</button>
+                                                    </form>
+                                                <?php endif; ?>
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="no-turnos">No hay turnos reservados.</p>
+        <?php endif; ?>
+
+        </section>
+
+        <section>
+            <h2 class="section-title">Deshabilitar un Día</h2>
+            <form method="POST" action="index.php?action=reservarTodoDia" class="form-disable-day">
+                <label for="fecha">Seleccione el Día a Reservar:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <button type="submit" class="btn warning">Deshabilitar dia</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

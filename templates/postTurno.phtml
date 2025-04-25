@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/stylePost.css">
+    <link rel="icon" href="img\ad9e70e4d5a51fad8bbd7fbed378244a~c5_720x720.jpg" type="image/jpg">
+    <title>Dream Study- Turno Reservado</title>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Tu turno fue reservado!</h1>
+        <div class="alert">
+            <p><strong>Nombre:</strong> <?= htmlspecialchars($datos['nombre']) ?></p>
+            <p><strong>Apellido:</strong> <?= htmlspecialchars($datos['apellido']) ?></p>
+            <p><strong>Servicio:</strong> <?= htmlspecialchars($datos['servicio']) ?></p>
+            <p><strong>Fecha:</strong> <?= htmlspecialchars($datos['fecha']) ?></p>
+            <p><strong>Horario:</strong> <?= htmlspecialchars($datos['horario']) ?></p>
+        </div>
+        <div class="button-group">
+            <a href="/index.php?action=reservar" class="btn primary">Volver al Inicio</a>
+            <a href="/index.php?action=cancelTurnoCliente&fecha=<?= urlencode($datos['fecha']) ?>&horario=<?= urlencode($datos['horario']) ?>"  
+               class="btn danger">Cancelar Turno</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="img\ad9e70e4d5a51fad8bbd7fbed378244a~c5_720x720.jpg" type="image/jpg">
+    <title>Dream Study - Admin Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Ingresar como Administrador</h2>
+        <form action="/index.php?action=login" method="POST">
+            <div class="form-group">
+                <label for="username">Nombre de usuario</label>
+                <input type="text" id="username" name="username" placeholder="Ingresa el nombre de usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+            </div>
+            <button type="submit" class="btn-login">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <footer class="footer-login">
+        <p>&copy; 2024 Dream Study. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
